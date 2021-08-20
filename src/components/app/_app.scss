@@ -1,0 +1,18 @@
+@import "../_global.scss";
+
+.app {
+    &__wrapper {
+        width: calc(100vw - 6rem);
+        height: 100%;
+        background-color: #fff;
+        margin: 2rem auto;
+        border-radius: 1rem;
+        max-width: 140rem;
+        @media (max-width: 76.8rem) {
+            width: calc(100% - 4rem);
+        }
+    }
+    &__content {
+        padding: 4rem 0;
+    }
+}

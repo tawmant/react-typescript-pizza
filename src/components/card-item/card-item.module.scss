@@ -1,0 +1,19 @@
+@import '../global';
+
+.cardItem {
+  text-align: center;
+}
+
+.img {
+  object-fit: cover;
+  width: 26rem;
+}
+
+.title {
+  @include font(1.2rem, 800, 2.4rem, #000);
+}
+
+.cardList,
+.sizeList {
+  display: flex;
+}

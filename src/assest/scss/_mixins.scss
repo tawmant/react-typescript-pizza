@@ -1,0 +1,7 @@
+@mixin font($size, $weight, $lineHeight, $color) {
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+    color: $color;
+}

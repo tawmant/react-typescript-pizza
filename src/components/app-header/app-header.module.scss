@@ -1,0 +1,46 @@
+@import '../global';
+
+.header {
+  border-bottom: 1px solid #f6f6f6;
+  padding: 3rem 0;
+  .logo {
+    max-width: 3rem;
+    max-height: 3rem;
+    object-fit: cover;
+    margin-right: 1.5rem;
+  }
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  .text {
+    .title {
+      @include font(1.6rem, 800, 2rem, #181818);
+    }
+    .desc {
+      @include font(1.3rem, 400, 1.4rem, #7b7b7b);
+    }
+  }
+  .line {
+    height: 120%;
+    width: 0.1rem;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0 1rem;
+  }
+  .right {
+    display: flex;
+    justify-content: flex-end;
+    .text {
+      display: flex;
+      align-items: center;
+      @include font(1.3rem, 700, 1.4rem, #ffffff);
+    }
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    background: $orange;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+  }
+}
