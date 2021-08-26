@@ -2,6 +2,14 @@
 
 .cardItem {
   text-align: center;
+  //display: grid;
+  //flex-direction: column;
+  //grid-template-columns: 1fr;
+  //grid-template-rows: 15.5rem 2.7rem 6.4rem 3.6rem;
+  //column-count: 3;
+  //gap: 1rem;
+  width: 100%;
+  margin-bottom: 5rem;
 }
 
 .img {
@@ -10,10 +18,80 @@
 }
 
 .title {
-  @include font(1.2rem, 800, 2.4rem, #000);
+  @include font(1.2rem, 800, 1.4rem, #000);
+  margin-bottom: 20px;
 }
 
-.cardList,
-.sizeList {
+.selectorBlock {
+  border-radius: 1rem;
+  background: #f3f3f3;
+}
+.sizeList,
+.cardList {
   display: flex;
+  justify-content: space-around;
+  padding: 0.3rem 0.2rem;
+  li {
+    @include font(1rem, 700, 1.4rem, #2c2c2c);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    cursor: pointer;
+    @include noselect();
+    &.active {
+      background: #ffffff;
+      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.04);
+    }
+    &.disabled {
+      color: #8a8a8a;
+      pointer-events: none;
+    }
+    &.disabled:hover {
+      background: inherit;
+    }
+    &:hover {
+      background: #ffffff;
+    }
+  }
+}
+
+.btn {
+  max-width: 10rem;
+  background: #fff;
+  border: 1px solid #eb5a1e;
+  border-radius: 3rem;
+  div {
+    padding: 0.3rem 0.3rem 0.4rem 0.3rem;
+    display: flex;
+    @include font(1rem, 700, 1.4rem, $orange);
+    p {
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+.btn:hover {
+  background: $orange;
+  border: 1px solid #eb5a1e;
+  div {
+    @include font(1rem, 700, 1.4rem, #fff);
+    margin: 0;
+  }
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    padding: 0.1rem 0;
+    width: 1.6rem;
+    margin: 0;
+    background: $orange;
+    color: #fff;
+    border-radius: 50%;
+  }
+}
+
+.cardPrice {
+  @include font(1.3rem, 700, 1.4rem, #000);
 }

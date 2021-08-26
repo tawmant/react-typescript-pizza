@@ -10,7 +10,6 @@
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.16",
-    "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.7",
     "axios": "^0.21.1",
@@ -55,7 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.11",
+    "@types/react": "^17.0.19",
     "@types/react-router-dom": "^5.1.7",
     "prettier": "^2.3.2"
   }

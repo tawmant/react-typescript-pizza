@@ -6,8 +6,6 @@ const initialState: CardState = {
   items: [],
   loading: true,
   error: false,
-  totalPrice: 0,
-  totalCount: 0,
 };
 
 const cardReducer = (state = initialState, action: CardAction): CardState => {

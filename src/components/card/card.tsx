@@ -3,6 +3,9 @@ import CardItem from '../card-item/card-item';
 import { useDispatch } from 'react-redux';
 import { thunkPizzaAction } from '../../redux/redux-components/card';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import cx from 'classnames';
+
+import './card.scss';
 
 const Card = () => {
   const state = useTypedSelector((state) => state.card);
@@ -13,7 +16,7 @@ const Card = () => {
   }, []);
 
   return (
-    <ul className='card'>
+    <ul className="card">
       {state.items.map((item) => (
         <CardItem key={item.id} item={item} />
       ))}

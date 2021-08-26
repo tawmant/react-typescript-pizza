@@ -7,10 +7,10 @@ import './index.scss';
 import App from './components/app/app';
 
 ReactDOM.render(
-	<Provider store={store}>
-		<Router>
-			<App />
-		</Router>
-	</Provider>,
-	document.getElementById('root')
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('root')
 );

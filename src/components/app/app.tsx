@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 import AppHeader from '../app-header/app-header';
 import './_app.scss';
-import { Route } from 'react-router';
-import Card from '../card/card';
+import { Route, Switch } from 'react-router';
+// import CartPage from '../../pages/cart/cart-page';
+import HomePage from '../../pages/home/home-page';
 
 const App: React.FC = () => {
   return (
@@ -10,7 +11,10 @@ const App: React.FC = () => {
       <div className="app__container">
         <AppHeader />
         <div className="app__content container">
-          <Route exact path="/" component={Card} />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            {/*<Route exact path="/cart" component={CartPage} />*/}
+          </Switch>
         </div>
       </div>
     </div>

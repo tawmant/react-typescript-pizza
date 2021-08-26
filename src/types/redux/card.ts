@@ -2,25 +2,23 @@ export interface CardState {
   items: ICardItem[];
   loading: boolean;
   error: boolean;
-  totalPrice: number;
-  totalCount: number;
 }
 
 export interface ICardItem {
-  title: string;
-  price: number;
-  url: string;
-  category: string;
   id: number;
+  url: string;
+  title: string;
+  types: number[];
+  sizes: number[];
+  price: number;
+  category: string;
+  rating: number;
 }
 
 export enum CardActionTypes {
   REQUESTED_PIZZA = 'GET_PIZZA',
   LOADED_PIZZA = 'LOADED_PIZZA',
   ERROR_PIZZA = 'ERROR_PIZZA',
-  ADD_CARD = 'ADD_CARD',
-  REMOVE_CARD = 'REMOVE_CARD',
-  CLEAN_CARD = 'CLEAN_CARD',
 }
 
 interface FetchRequestedPizzaAction {
@@ -37,24 +35,7 @@ interface FetchErrorPizzaAction {
   payload: boolean;
 }
 
-interface FetchCardsAddAction {
-  type: CardActionTypes.ADD_CARD;
-  payload: object;
-}
-
-interface FetchCardsRemoveAction {
-  type: CardActionTypes.REMOVE_CARD;
-  payload: number;
-}
-
-interface FetchCardsCleanAction {
-  type: CardActionTypes.CLEAN_CARD;
-}
-
 export type CardAction =
-  | FetchCardsAddAction
-  | FetchCardsRemoveAction
-  | FetchCardsCleanAction
   | FetchRequestedPizzaAction
   | FetchLoadedPizzaAction
   | FetchErrorPizzaAction;
