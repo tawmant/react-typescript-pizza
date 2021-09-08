@@ -10,7 +10,7 @@ import cx from 'classnames';
 import classes from './app-header.module.scss';
 
 function Header() {
-  const { totalCount, totalPrice } = useTypedSelector(({ card }) => card);
+  const { totalCount, totalPrice } = useTypedSelector(({ cart }) => cart);
   return (
     <header className={classes.header}>
       <div className="container">

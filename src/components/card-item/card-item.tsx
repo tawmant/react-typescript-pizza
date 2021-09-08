@@ -4,20 +4,37 @@ import MyLoader from './loader';
 import classes from './card-item.module.scss';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import cx from 'classnames';
+import { useDispatch } from 'react-redux';
+import { CartActionTypes } from '../../types/redux/cart';
 
 interface ICardItemProps {
   item: ICardItem;
+  itemCount: number;
 }
 
 const CardItem: React.FC<ICardItemProps> = (props) => {
-  const state = useTypedSelector((state) => state.card);
+  const dispatch = useDispatch();
+
+  const { itemCount } = props;
   const { title, category, id, price, url, types, sizes } = props.item,
     pizzaSize = [26, 30, 40],
     pizzaTypes = ['тонкое', 'традиционное'],
     [colorPlus, setColorPlus] = useState('#EB5A1E'),
     [activeSize, setActiveSize] = useState<number>(2),
-    [activeTypes, setActiveTypes] = useState<number>(types[0]);
+    [activeType, setActiveType] = useState<number>(types[0]);
 
+  const addPizza = () => {
+    const obj = {
+      id,
+      title,
+      url,
+      price,
+      size: pizzaSize[activeSize],
+      type: pizzaTypes[activeType],
+    };
+
+    dispatch({ type: CartActionTypes.ADD_PIZZA, payload: obj });
+  };
   return (
     <li className={classes.cardItem}>
       <img className={classes.img} src={url} alt={title} />
@@ -27,9 +44,9 @@ const CardItem: React.FC<ICardItemProps> = (props) => {
           {pizzaTypes.map((type, i) => (
             <li
               key={type}
-              onClick={() => setActiveTypes(i)}
+              onClick={() => setActiveType(i)}
               className={cx(classes.typeItem, {
-                [classes.active]: activeTypes === i,
+                [classes.active]: activeType === i,
                 [classes.disabled]: !types.includes(i),
               })}
             >
@@ -59,8 +76,12 @@ const CardItem: React.FC<ICardItemProps> = (props) => {
           className={classes.btn}
           onMouseLeave={(e) => setColorPlus('#FE5F1E')}
           onMouseEnter={(e) => setColorPlus('#fff')}
+          onClick={() => addPizza()}
         >
-          <div className="d-flex align-items-center">
+          <div
+            className="d-flex align-items-center"
+            onClick={() => console.log(itemCount)}
+          >
             <span className={classes.plus}>
               <svg
                 width="12"
@@ -76,9 +97,11 @@ const CardItem: React.FC<ICardItemProps> = (props) => {
               </svg>
             </span>
             <p>Добавить</p>
-            <span className={classes.count}>
-              <span>{state.totalCount > 0 ? state.totalCount : null}</span>
-            </span>
+            {itemCount > 0 ? (
+              <span className={classes.count}>
+                <span>{itemCount}</span>
+              </span>
+            ) : null}
           </div>
         </button>
       </div>

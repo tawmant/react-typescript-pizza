@@ -2,9 +2,10 @@ import React, { FC, MouseEvent } from 'react';
 
 interface ICartItemProps {
   id: number;
-  name: string;
+  title: string;
   type: number[];
   size: number[];
+  imgUrl: string;
   totalPrice: number;
   totalCount: number;
   onRemove: (id: number) => void;
@@ -15,9 +16,10 @@ interface ICartItemProps {
 const CartItem: FC<ICartItemProps> = (props) => {
   const {
     id,
-    name,
+    title,
     type,
     size,
+    imgUrl,
     totalPrice,
     totalCount,
     onRemove,
@@ -28,14 +30,10 @@ const CartItem: FC<ICartItemProps> = (props) => {
   return (
     <div className="cart__item">
       <div className="cart__item-img">
-        <img
-          className="pizza-block__image"
-          src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-          alt="Pizza"
-        />
+        <img className="pizza-block__image" src={imgUrl} alt="Pizza" />
       </div>
       <div className="cart__item-info">
-        <h3>{name}</h3>
+        <h3>{title}</h3>
         <p>
           {type} тесто, {size} см.
         </p>
@@ -43,11 +41,11 @@ const CartItem: FC<ICartItemProps> = (props) => {
       <div className="cart__item-count">
         <div
           onClick={() => onMinus(id)}
-          className="button button--outline button--circle cart__item-count-minus"
+          className="cart__btn-minus button button--outline button--circle cart__item-count-minus"
         >
           <svg
-            width="10"
-            height="10"
+            width="17"
+            height="17"
             viewBox="0 0 10 10"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -65,11 +63,11 @@ const CartItem: FC<ICartItemProps> = (props) => {
         <b>{totalCount}</b>
         <div
           onClick={() => onPlus(id)}
-          className="button button--outline button--circle cart__item-count-plus"
+          className="cart__btn-plus button button--outline button--circle cart__item-count-plus"
         >
           <svg
-            width="10"
-            height="10"
+            width="17"
+            height="17"
             viewBox="0 0 10 10"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +89,8 @@ const CartItem: FC<ICartItemProps> = (props) => {
       <div className="cart__item-remove">
         <button onClick={() => onRemove(id)} className="button--circle">
           <svg
-            width="10"
-            height="10"
+            width="17"
+            height="17"
             viewBox="0 0 10 10"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

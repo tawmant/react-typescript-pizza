@@ -13,9 +13,9 @@ const cardReducer = (state = initialState, action: CardAction): CardState => {
     case CardActionTypes.REQUESTED_PIZZA:
       return { ...state, loading: true };
     case CardActionTypes.LOADED_PIZZA:
-      return {...state, items: action.payload, loading: false}
+      return { ...state, items: action.payload, loading: false };
     case CardActionTypes.ERROR_PIZZA:
-      return {...state, error: action.payload, loading: false}
+      return { ...state, error: action.payload, loading: false };
     default:
       return state;
   }

@@ -2,14 +2,19 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import cartEmptyImage from '../assets/img/empty-cart.png';
-import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
-import CartItem from "../../components/cart-items/cart-item";
-import {useTypedSelector} from "../../hooks/useTypedSelector";
+import cartEmptyImage from '../../assest/img/empty-cart.png';
+// import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
+import CartItem from '../../components/cart-items/cart-item';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+
+import './cart.scss';
+import { CartActionTypes } from '../../types/redux/cart';
 
 function Cart() {
   const dispatch = useDispatch();
-  const { totalPrice, totalCount, items } = useTypedSelector((state) => state.cart);
+  const { items, totalPrice, totalCount } = useTypedSelector(
+    (state) => state.cart
+  );
 
   const addedPizzas = Object.keys(items).map((key) => {
     return items[key].items[0];
@@ -17,22 +22,22 @@ function Cart() {
 
   const onClearCart = () => {
     if (window.confirm('Вы действительно хотите очистить корзину?')) {
-      dispatch(clearCart());
+      dispatch({ type: CartActionTypes.CLEAR_PIZZA });
     }
   };
 
   const onRemoveItem = (id: number) => {
     if (window.confirm('Вы действительно хотите удалить?')) {
-      dispatch(removeCartItem(id));
+      dispatch({ type: CartActionTypes.REMOVE_PIZZA, payload: id });
     }
   };
 
   const onPlusItem = (id: number) => {
-    dispatch(plusCartItem(id));
+    dispatch({ type: CartActionTypes.PLUS_PIZZA, payload: id });
   };
 
   const onMinusItem = (id: number) => {
-    dispatch(minusCartItem(id));
+    dispatch({ type: CartActionTypes.MINUS_PIZZA, payload: id });
   };
 
   const onClickOrder = () => {
@@ -50,7 +55,8 @@ function Cart() {
                 height="18"
                 viewBox="0 0 18 18"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M6.33333 16.3333C7.06971 16.3333 7.66667 15.7364 7.66667 15C7.66667 14.2636 7.06971 13.6667 6.33333 13.6667C5.59695 13.6667 5 14.2636 5 15C5 15.7364 5.59695 16.3333 6.33333 16.3333Z"
                   stroke="white"
@@ -77,11 +83,12 @@ function Cart() {
             </h2>
             <div className="cart__clear">
               <svg
-                width="20"
-                height="20"
+                width="25"
+                height="25"
                 viewBox="0 0 20 20"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M2.5 5H4.16667H17.5"
                   stroke="#B6B6B6"
@@ -111,7 +118,6 @@ function Cart() {
                   strokeLinejoin="round"
                 />
               </svg>
-
               <span onClick={onClearCart}>Очистить корзину</span>
             </div>
           </div>
@@ -120,9 +126,10 @@ function Cart() {
               <CartItem
                 key={obj.id}
                 id={obj.id}
-                name={obj.name}
+                title={obj.title}
                 type={obj.type}
                 size={obj.size}
+                imgUrl={obj.url}
                 totalPrice={items[obj.id].totalPrice}
                 totalCount={items[obj.id].items.length}
                 onRemove={onRemoveItem}
@@ -141,13 +148,17 @@ function Cart() {
               </span>
             </div>
             <div className="cart__bottom-buttons">
-              <a href="/" className="button button--outline button--add go-back-btn">
+              <a
+                href="/"
+                className="button button--outline button--add go-back-btn"
+              >
                 <svg
                   width="8"
                   height="14"
                   viewBox="0 0 8 14"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M7 13L1 6.93015L6.86175 1"
                     stroke="#D3D3D3"

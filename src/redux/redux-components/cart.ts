@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ICardItem } from '../../types/redux/card';
 
 const initialState: CartState = {
-  items: [],
+  items: {},
   totalPrice: 0,
   totalCount: 0,
 };
@@ -21,8 +21,6 @@ const _get = (obj: any, path: string) => {
 
 const getTotalSum = (obj: object, path: string) => {
   return Object.values(obj).reduce((sum, obj) => {
-    console.log(sum, obj);
-    
     const value = _get(obj, path);
     return sum + value;
   }, 0);
@@ -45,28 +43,67 @@ const cartReducer = (state = initialState, action: CartAction): CartState => {
       const totalCount = getTotalSum(newItems, 'items.length');
       return { ...state, items: newItems, totalCount, totalPrice };
     case CartActionTypes.REMOVE_PIZZA:
-      return { ...state };
-    case CartActionTypes.PLUS_PIZZA:
-      return { ...state };
-    case CartActionTypes.MINUS_PIZZA:
-      return { ...state };
+      const newObj = {
+        ...state.items,
+      };
+      const currentTotalPrice = newObj[action.payload].totalPrice;
+      const currentTotalCount = newObj[action.payload].items.length;
+      delete newObj[action.payload];
+      return {
+        ...state,
+        items: newObj,
+        totalCount: state.totalCount - currentTotalCount,
+        totalPrice: state.totalPrice - currentTotalPrice,
+      };
+    case CartActionTypes.PLUS_PIZZA: {
+      const newObjPlus = [
+        ...state.items[action.payload].items,
+        state.items[action.payload].items[0],
+      ];
+      const newItemsPlus = {
+        ...state.items,
+        [action.payload]: {
+          items: newObjPlus,
+          totalPrice: getTotalPrice(newObjPlus),
+        },
+      };
+      const totalPrice = getTotalSum(newItemsPlus, 'totalPrice');
+      const totalCount = getTotalSum(newItemsPlus, 'items.length');
+      return {
+        ...state,
+        items: newItemsPlus,
+        totalPrice,
+        totalCount,
+      };
+    }
+    case CartActionTypes.MINUS_PIZZA: {
+      const oldItems = state.items[action.payload].items;
+      const newPizzaItem =
+        oldItems.length > 1
+          ? state.items[action.payload].items.slice(1)
+          : oldItems;
+
+      const newItems = {
+        ...state.items,
+        [action.payload]: {
+          items: newPizzaItem,
+          totalPrice: getTotalPrice(newPizzaItem),
+        },
+      };
+      if (oldItems.length <= 1) {
+        delete newItems[action.payload];
+      }
+
+      const totalPrice = getTotalSum(newItems, 'totalPrice');
+      const totalCount = getTotalSum(newItems, 'items.length');
+
+      return { ...state, items: newItems, totalCount, totalPrice };
+    }
     case CartActionTypes.CLEAR_PIZZA:
-      return { ...state };
+      return { items: {}, totalCount: 0, totalPrice: 0 };
     default:
       return state;
   }
 };
-
-// export const thunkPizzaAction = () => {
-//   return async (dispatch: Dispatch<CardAction>) => {
-//     dispatch({ type: CardActionTypes.REQUESTED_PIZZA });
-//     try {
-//       const response = await axios.get('http://localhost:3005/menu');
-//       dispatch({ type: CardActionTypes.LOADED_PIZZA, payload: response.data });
-//     } catch (e) {
-//       dispatch({ type: CardActionTypes.ERROR_PIZZA, payload: false });
-//     }
-//   };
-// };
 
 export default cartReducer;
