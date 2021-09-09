@@ -1,7 +1,7 @@
-import { CartAction, CartActionTypes, CartState } from '../../types/redux/cart';
+import { CartAction, CartActionTypes, CartState } from '../../types/redux/ICart';
 import { Dispatch } from 'react';
 import axios from 'axios';
-import { ICardItem } from '../../types/redux/card';
+import { ICardItem } from '../../types/redux/ICard';
 
 const initialState: CartState = {
   items: {},

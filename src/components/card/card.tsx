@@ -13,10 +13,6 @@ const Card = () => {
   const stateCart = useTypedSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(thunkPizzaAction());
-  }, []);
-
   if (state.loading) {
     return (
       <div>

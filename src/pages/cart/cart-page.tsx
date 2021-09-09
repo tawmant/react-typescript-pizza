@@ -8,7 +8,7 @@ import CartItem from '../../components/cart-items/cart-item';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import './cart.scss';
-import { CartActionTypes } from '../../types/redux/cart';
+import { CartActionTypes } from '../../types/redux/ICart';
 
 function Cart() {
   const dispatch = useDispatch();

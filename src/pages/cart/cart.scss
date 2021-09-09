@@ -314,10 +314,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 21rem;
-
-        border-color: darken($color: $gray-line, $amount: 10);
-
+        border: 0.1rem solid #d0d0d0;
+        border-radius: 3rem;
+        padding: 1.6rem;
         span {
           color: darken($color: $gray-line, $amount: 20);
           font-weight: 500;
@@ -326,7 +325,7 @@
 
         &:hover {
           background-color: darken($color: $gray-line, $amount: 90);
-          border-color: darken($color: $gray-line, $amount: 90);
+          border-color: #242424;
 
           span {
             color: $gray-line;
@@ -345,8 +344,10 @@
       .pay-btn {
         font-size: 1.6rem;
         font-weight: 600;
-        width: 21rem;
         padding: 1.6rem;
+        @include font(1.6rem, 600, 1.8rem, #fff);
+        background-color: $orange;
+        border-radius: 3rem;
       }
 
       @media (max-width: 500px) {
@@ -391,11 +392,14 @@
     }
 
     .button--black {
-      padding: 1.2rem 0 1.4rem;
-      width: 23rem;
+      background: #000;
+      border-radius: 3rem;
+      padding: 1.2rem 1.4rem;
       margin: 0 auto;
-      font-weight: 600;
-      font-size: 1.8rem;
+      @include font(1.4rem, 600, 1.7rem, #fff);
+      span {
+        white-space: nowrap;
+      }
     }
   }
 }

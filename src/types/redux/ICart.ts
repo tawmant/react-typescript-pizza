@@ -5,7 +5,14 @@ export interface CartState {
   totalCount: number;
 }
 
-export interface ICartItem {}
+interface ICartItem {
+  id: number;
+  title: string
+  url: string
+  price: number;
+  size: number;
+  type: string
+}
 
 export enum CartActionTypes {
   ADD_PIZZA = 'ADD_PIZZA',
@@ -17,7 +24,7 @@ export enum CartActionTypes {
 
 interface FetchCardsAddAction {
   type: CartActionTypes.ADD_PIZZA;
-  payload: any;
+  payload: ICartItem;
 }
 
 interface FetchCardsRemoveAction {

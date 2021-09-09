@@ -1,4 +1,8 @@
-import { CardAction, CardActionTypes, CardState } from '../../types/redux/card';
+import {
+  CardAction,
+  CardActionTypes,
+  CardState,
+} from '../../types/redux/ICard';
 import { Dispatch } from 'react';
 import axios from 'axios';
 
@@ -21,11 +25,18 @@ const cardReducer = (state = initialState, action: CardAction): CardState => {
   }
 };
 
-export const thunkPizzaAction = () => {
+export const thunkPizzaAction = (
+  category: string,
+  sortBy: { type: string; order: string }
+) => {
   return async (dispatch: Dispatch<CardAction>) => {
     dispatch({ type: CardActionTypes.REQUESTED_PIZZA });
     try {
-      const response = await axios.get('http://localhost:3005/menu');
+      const response = await axios.get(
+        `http://localhost:3005/menu?${
+          category !== null ? `category=${category}` : ''
+        }&_sort=${sortBy.type}&_order=${sortBy.order}`
+      );
       dispatch({ type: CardActionTypes.LOADED_PIZZA, payload: response.data });
     } catch (e) {
       dispatch({ type: CardActionTypes.ERROR_PIZZA, payload: false });

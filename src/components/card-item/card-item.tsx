@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ICardItem } from '../../types/redux/card';
+import { ICardItem } from '../../types/redux/ICard';
 import MyLoader from './loader';
 import classes from './card-item.module.scss';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import cx from 'classnames';
 import { useDispatch } from 'react-redux';
-import { CartActionTypes } from '../../types/redux/cart';
+import { CartActionTypes } from '../../types/redux/ICart';
 
 interface ICardItemProps {
   item: ICardItem;
@@ -80,7 +80,6 @@ const CardItem: React.FC<ICardItemProps> = (props) => {
         >
           <div
             className="d-flex align-items-center"
-            onClick={() => console.log(itemCount)}
           >
             <span className={classes.plus}>
               <svg
