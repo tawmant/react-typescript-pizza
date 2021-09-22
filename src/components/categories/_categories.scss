@@ -1,4 +1,4 @@
-@import "../global";
+@import '../global';
 
 .categories {
   flex: 1;
@@ -7,7 +7,7 @@
 
   @media (max-width: 768px) {
     max-width: 100%;
-    margin-bottom: 30px;
+    padding-bottom: 1rem;
   }
 
   ul {
@@ -15,13 +15,13 @@
 
     li {
       background-color: #f9f9f9;
-      padding: 13px 30px;
-      border-radius: 30px;
-      margin-right: 10px;
-      font-weight: bold;
+      padding: 1rem 2rem;
+      border-radius: 3rem;
+      margin-right: 1rem;
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       @include noselect();
+      @include font(1.1rem, 700, 1.4rem, #000);
 
       &:hover {
         background-color: darken(#f9f9f9, 2%);

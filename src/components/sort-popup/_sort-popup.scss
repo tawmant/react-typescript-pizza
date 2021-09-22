@@ -7,6 +7,7 @@
   &__label {
     display: flex;
     align-items: center;
+    @include font(1rem, 700, 1.4rem, #000);
 
     svg {
       margin-right: 8px;
@@ -38,6 +39,7 @@
     overflow: hidden;
     padding: 10px 0;
     width: 160px;
+    font-family: 'Proxima Nova', sans-serif;
 
     ul {
       overflow: hidden;

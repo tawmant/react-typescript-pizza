@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import Card from '../../components/card/card';
 import { useDispatch } from 'react-redux';
+import './_home-page.scss'
 
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Categories from '../../components/categories/categories';

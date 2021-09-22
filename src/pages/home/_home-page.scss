@@ -1,0 +1,12 @@
+.content__top {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    .sort {
+      padding: 2rem 0;
+    }
+  }
+}

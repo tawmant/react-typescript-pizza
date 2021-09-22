@@ -14,7 +14,7 @@ function Header() {
   return (
     <header className={classes.header}>
       <div className="container">
-        <div className="d-flex justify-content-between align-items-center">
+        <div className={classes.wrapper}>
           <Link to="/" className={cx('col-4', classes.left)}>
             <img className={classes.logo} src={logo} alt="logo" />
             <div className={classes.text}>

@@ -1,4 +1,4 @@
-@import '../global';
+@import "../global";
 
 .header {
   border-bottom: 1px solid #f6f6f6;
@@ -9,9 +9,27 @@
     object-fit: cover;
     margin-right: 1.5rem;
   }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 600px) {
+      justify-content: center;
+      flex-direction: column;
+      .left,
+      .right {
+        width: 100% !important;
+        padding: .7rem 0;
+        justify-content: center;
+      }
+    }
+  }
   .left {
     display: flex;
     align-items: center;
+    @media (max-width: 1050px) {
+      width: 60%;
+    }
   }
   .text {
     .title {

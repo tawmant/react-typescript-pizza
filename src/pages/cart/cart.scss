@@ -1,4 +1,4 @@
-@import '../../components/_global';
+@import "../../components/_global";
 
 .container {
   width: $container-width;
@@ -23,7 +23,7 @@
 }
 
 .cart {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   &__top {
     display: flex;
     justify-content: space-between;
@@ -156,7 +156,6 @@
         width: 100%;
         order: 2;
         h3 {
-          font-size: 3.2rem;
           margin-bottom: 8px;
           margin-top: 1.5rem;
         }
@@ -184,7 +183,7 @@
 
       @media (max-width: 768px) {
         order: 4;
-        width: 130px;
+        width: 13rem;
         margin: 1rem 0;
 
         .button {
@@ -295,7 +294,7 @@
       justify-content: space-between;
 
       span {
-        font-size: 2rem;
+        font-size: 1.5rem;
 
         &:last-of-type {
           b {
@@ -342,10 +341,8 @@
       }
 
       .pay-btn {
-        font-size: 1.6rem;
-        font-weight: 600;
-        padding: 1.6rem;
-        @include font(1.6rem, 600, 1.8rem, #fff);
+        padding: 1.4rem;
+        @include font(1.3rem, 600, 1.4rem, #fff);
         background-color: $orange;
         border-radius: 3rem;
       }
