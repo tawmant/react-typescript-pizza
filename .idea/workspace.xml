@@ -19,15 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="befd5607-66b5-4006-98f1-1c6d5a9cee6a" name="Default Changelist" comment="">
+    <list default="true" id="befd5607-66b5-4006-98f1-1c6d5a9cee6a" name="Default Changelist" comment="changing the language to English">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card-item/card-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card-item/card-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart-items/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart-items/cart-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sort-popup/sort-popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sort-popup/sort-popup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/cart-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/cart-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +75,17 @@
       <workItem from="1631779724862" duration="164000" />
       <workItem from="1632234170876" duration="3689000" />
       <workItem from="1632306089703" duration="2848000" />
-      <workItem from="1636785915917" duration="3302000" />
+      <workItem from="1636785915917" duration="3702000" />
+      <workItem from="1636790093390" duration="323000" />
     </task>
+    <task id="LOCAL-00001" summary="changing the language to English">
+      <created>1636789392296</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636789392296</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,5 +102,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changing the language to English" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing the language to English" />
   </component>
 </project>
