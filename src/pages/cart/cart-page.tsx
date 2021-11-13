@@ -21,13 +21,13 @@ function Cart() {
   });
 
   const onClearCart = () => {
-    if (window.confirm('Вы действительно хотите очистить корзину?')) {
+    if (window.confirm('Do you really want to empty your cart?')) {
       dispatch({ type: CartActionTypes.CLEAR_PIZZA });
     }
   };
 
   const onRemoveItem = (id: number) => {
-    if (window.confirm('Вы действительно хотите удалить?')) {
+    if (window.confirm('Do you really want to delete?')) {
       dispatch({ type: CartActionTypes.REMOVE_PIZZA, payload: id });
     }
   };
@@ -41,7 +41,7 @@ function Cart() {
   };
 
   const onClickOrder = () => {
-    console.log('ВАШ ЗАКАЗ', items);
+    console.log('YOUR ORDER', items);
   };
 
   return (
@@ -79,7 +79,7 @@ function Cart() {
                   strokeLinejoin="round"
                 />
               </svg>
-              Корзина
+              Cart
             </h2>
             <div className="cart__clear">
               <svg
@@ -118,7 +118,7 @@ function Cart() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span onClick={onClearCart}>Очистить корзину</span>
+              <span onClick={onClearCart}>Empty Cart</span>
             </div>
           </div>
           <div className="content__items">
@@ -141,10 +141,10 @@ function Cart() {
           <div className="cart__bottom">
             <div className="cart__bottom-details">
               <span>
-                Всего пицц: <b>{totalCount} шт.</b>
+                Total pizzas: <b>{totalCount} шт.</b>
               </span>
               <span>
-                Сумма заказа: <b>{totalPrice} ₽</b>
+                Order amount: <b>{totalPrice ? totalPrice.toFixed(2) : totalPrice} $</b>
               </span>
             </div>
             <div className="cart__bottom-buttons">
@@ -168,11 +168,11 @@ function Cart() {
                   />
                 </svg>
                 <Link to="/">
-                  <span>Вернуться назад</span>
+                  <span>Go back</span>
                 </Link>
               </a>
               <button onClick={onClickOrder} className="pay-btn">
-                <span>Оплатить сейчас</span>
+                <span>Pay Now</span>
               </button>
             </div>
           </div>
@@ -180,16 +180,16 @@ function Cart() {
       ) : (
         <div className="cart cart--empty">
           <h2>
-            Корзина пустая <i>😕</i>
+            Cart is empty <i>😕</i>
           </h2>
           <p>
-            Вероятней всего, вы не заказывали ещё пиццу.
+            You probably haven't ordered a pizza yet.
             <br />
-            Для того, чтобы заказать пиццу, перейди на главную страницу.
+            To order a pizza, go to the home page.
           </p>
           <img src={cartEmptyImage} alt="Empty cart" />
           <Link to="/" className="button button--black">
-            <span>Вернуться назад</span>
+            <span>Go back</span>
           </Link>
         </div>
       )}

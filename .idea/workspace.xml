@@ -20,23 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="befd5607-66b5-4006-98f1-1c6d5a9cee6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/home/_home-page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/User.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/online-store.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app-header/app-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/app-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/_app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/_categories.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sort-popup/_sort-popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sort-popup/_sort-popup.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/cart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card-item/card-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card-item/card-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart-items/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart-items/cart-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sort-popup/sort-popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sort-popup/sort-popup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/cart-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/cart-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/home-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home-page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +62,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\WorkFolder\Projects\Frontend\REACT - TYPESCRIPT - REDUX\react-pizza-typescript\node_modules\prettier" />
-    <property name="ts.external.directory.path" value="D:\WorkFolder\Projects\Frontend\REACT - TYPESCRIPT - REDUX\react-pizza-typescript\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -88,11 +80,12 @@
       <workItem from="1631779724862" duration="164000" />
       <workItem from="1632234170876" duration="3689000" />
       <workItem from="1632306089703" duration="2848000" />
+      <workItem from="1636785915917" duration="3302000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -105,15 +98,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="395" y="137" width="585" height="534" key="find.popup" timestamp="1632306417798">
-      <screen x="0" y="40" width="1366" height="728" />
-    </state>
-    <state x="395" y="137" width="585" height="534" key="find.popup/0.40.1366.728@0.40.1366.728" timestamp="1632306417798" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1632307191367">
-      <screen x="0" y="40" width="1366" height="728" />
-    </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1632307191367" />
   </component>
 </project>

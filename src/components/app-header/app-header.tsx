@@ -19,13 +19,13 @@ function Header() {
             <img className={classes.logo} src={logo} alt="logo" />
             <div className={classes.text}>
               <h1 className={classes.title}>REACT PIZZA</h1>
-              <p className={classes.desc}>самая вкусная пицца во вселенной</p>
+              <p className={classes.desc}>The tastiest pizza in the universe</p>
             </div>
           </Link>
           <Link to="/cart" className={cx('col-4', classes.right)}>
             <button className={classes.btn}>
               <div className={cx(classes.totalPrice, classes.text)}>
-                {totalPrice} ₽
+                {totalPrice ? totalPrice.toFixed(2) : totalPrice} $
               </div>
               <span className={classes.line}></span>
               <div className={cx(classes.totalCount, classes.text)}>

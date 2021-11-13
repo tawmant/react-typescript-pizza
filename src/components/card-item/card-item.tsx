@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { ICardItem } from '../../types/redux/ICard';
-import MyLoader from './loader';
 import classes from './card-item.module.scss';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 import cx from 'classnames';
 import { useDispatch } from 'react-redux';
 import { CartActionTypes } from '../../types/redux/ICart';
@@ -18,7 +16,7 @@ const CardItem: React.FC<ICardItemProps> = (props) => {
   const { itemCount } = props;
   const { title, category, id, price, url, types, sizes } = props.item,
     pizzaSize = [26, 30, 40],
-    pizzaTypes = ['тонкое', 'традиционное'],
+    pizzaTypes = ['thin', 'traditional'],
     [colorPlus, setColorPlus] = useState('#EB5A1E'),
     [activeSize, setActiveSize] = useState<number>(2),
     [activeType, setActiveType] = useState<number>(types[0]);
@@ -71,7 +69,7 @@ const CardItem: React.FC<ICardItemProps> = (props) => {
         </ul>
       </div>
       <div className="mt-4 d-flex justify-content-between align-items-center">
-        <p className={classes.cardPrice}>от {price} ₽</p>
+        <p className={classes.cardPrice}>from {price} $</p>
         <button
           className={classes.btn}
           onMouseLeave={(e) => setColorPlus('#FE5F1E')}
@@ -95,7 +93,7 @@ const CardItem: React.FC<ICardItemProps> = (props) => {
                 />
               </svg>
             </span>
-            <p>Добавить</p>
+            <p>Add</p>
             {itemCount > 0 ? (
               <span className={classes.count}>
                 <span>{itemCount}</span>
